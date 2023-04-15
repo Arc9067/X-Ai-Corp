@@ -1,0 +1,393 @@
+/*===== GOOGLE FONTS =====*/
+@import url("https://fonts.googleapis.com/css2?family=Changa:wght@400;500;600;700;800&family=Vazirmatn:wght@400;500;600;700;800&family=Work+Sans:wght@400;500;600;700;800&display=swap");
+/*===== VARIABLES CSS =====*/
+:root {
+  /*===== Colores =====*/
+  --first-color: #140c2d;
+  --second-color: #fdc33f;
+  --body-bg: #040307;
+  /*===== Fuente y tipografia =====*/
+  --body-font: "Work Sans", sans-serif;
+  --big-font-size: 2rem;
+  --h2-font-size: 1.25rem;
+  --normal-font-size: 0.938rem;
+  --smaller-font-size: 0.75rem;
+  --z-back: -10;
+  --z-fixed: 100;
+}
+
+@media screen and (min-width: 968px) {
+  :root {
+    --big-font-size: 3.5rem;
+    --h2-font-size: 2rem;
+    --normal-font-size: 1rem;
+    --smaller-font-size: 0.875rem;
+  }
+}
+
+/*===== BASE =====*/
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  color: #000;
+  background-color: var(--body-bg);
+}
+
+h1,
+h2,
+p {
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/*===== CLASS CSS ===== */
+a.buy-btn {
+  padding: 16px 32px;
+  background: #d08c25; /* Drop Shadow */
+  box-shadow: 0px 4px 8px rgba(9, 50, 67, 0.16);
+  font-family: "Work Sans";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 140%;
+  color: #fff;
+  display: block;
+  width: max-content;
+}
+
+header {
+  // height: 5rem;
+  width: 100%;
+  padding-block: 10px;
+  position: absolute;
+  top: 0;
+  z-index: var(--z-fixed);
+  background-color: var(--body-bg);
+
+  .container {
+    a.nav-logo {
+      font-family: "Vazirmatn";
+      font-style: normal;
+      font-weight: 800;
+      font-size: 24px;
+      line-height: 38px;
+      text-align: center;
+      color: #ffffff;
+    }
+    button {
+      background-color: transparent;
+      outline: none;
+      border: none;
+      padding: 0;
+
+      .close {
+        display: none;
+      }
+    }
+    button.open {
+      .close {
+        display: block;
+      }
+      .open {
+        display: none;
+      }
+    }
+
+    a.buy-btn {
+      padding: 16px 32px;
+      /* Drop Shadow */
+      box-shadow: 0px 4px 8px rgba(9, 50, 67, 0.16);
+      font-family: "Work Sans";
+      font-style: normal;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 140%;
+    }
+    @media (max-width: 700px) {
+      a.buy-btn {
+        display: none;
+      }
+    }
+    ul.nav-ul {
+      height: 0;
+      width: 100%;
+      // background-color: red;
+      padding: 0;
+      margin: 0;
+      overflow: hidden;
+      transition: height 0.3s linear;
+
+      li {
+        font-family: "Changa";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 37px;
+        /* identical to box height */
+
+        color: #ffffff;
+      }
+      li.active {
+        background: linear-gradient(90deg, #000 0%, #fff 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-fill-color: transparent;
+      }
+    }
+    ul.open {
+      height: 300px;
+    }
+  }
+}
+
+#hero {
+  // min-height: 100vh;
+  width: 100%;
+  padding-block: 150px 100px;
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+  @media (min-width: 1100px) {
+    max-height: 100vh;
+  }
+
+  .hero-abso {
+    position: absolute;
+    top: 0;
+    left: 0;
+    // z-index: var(--z-back);
+    z-index: 1;
+  }
+  .hero-line {
+    position: absolute;
+    top: 0;
+    right: 0;
+    // z-index: var(--z-back);
+    @media (max-width: 700px) {
+      display: none;
+    }
+  }
+  .star-abso {
+    position: absolute;
+    margin-inline: auto;
+    right: 50%;
+    top: 100px;
+  }
+  .row {
+    div {
+      z-index: 10;
+      h1.title {
+        font-family: "Changa";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 64px;
+        line-height: 120%;
+        color: #fff;
+
+        @media (max-width: 700px) {
+          font-size: 48px;
+          line-height: 120%;
+          text-align: center;
+        }
+      }
+      p.info {
+        font-family: "Changa";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 140%;
+        max-width: 500px;
+
+        @media (max-width: 700px) {
+          text-align: center;
+        }
+        color: #fff;
+      }
+      .btn-div {
+        @media (max-width: 700px) {
+          a.buy-btn {
+            margin-inline: auto;
+          }
+        }
+        a.buy-btn:last-child {
+          background: transparent;
+          border: 1px solid #fff;
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+
+main {
+  width: 100%;
+
+  #tokenomics {
+    width: 100%;
+    // background: #000;
+    padding-block: 50px;
+    position: relative;
+
+    .tk-line {
+      position: absolute;
+      right: -11%;
+      top: 0;
+    }
+
+    .container {
+      position: relative;
+      .star-abso {
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
+      h2.head {
+        font-family: "Changa";
+        font-style: normal;
+        font-weight: 600;
+        font-size: 32px;
+        line-height: 140%;
+        background: #d08c25;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-fill-color: transparent;
+
+        @media (max-width: 700px) {
+          font-weight: 600;
+          font-size: 24px;
+          line-height: 140%;
+        }
+      }
+      h1.title {
+        font-family: "Changa";
+        font-style: normal;
+        font-weight: 600;
+        font-size: 40px;
+        line-height: 140%;
+        color: #fff;
+      }
+      div.flex-div {
+        width: 100%;
+        display: flex;
+        // flex-direction: column;
+        align-items: flex-start;
+        padding: 0px;
+        gap: 36px;
+        flex-wrap: wrap;
+
+        div {
+          width: 345px;
+          min-height: 300px;
+          margin-inline: auto;
+          background: #0a0811;
+          border-radius: 12px;
+          padding: 20px;
+
+          h2 {
+            font-family: "Changa";
+            font-style: normal;
+            font-weight: 600;
+            font-size: 32px;
+            line-height: 140%;
+            color: #f0f0f0;
+
+            @media (max-width: 700px) {
+              font-size: 24px;
+              line-height: 140%;
+            }
+          }
+          p {
+            font-family: "Changa";
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 32px;
+            color: #ffffff;
+          }
+        }
+      }
+    }
+  }
+
+  #about {
+    width: 100%;
+    padding-block: 50px;
+
+    .text-div {
+      position: relative;
+    }
+    h2.head {
+      font-family: "Changa";
+      font-style: normal;
+      font-weight: 600;
+      font-size: 32px;
+      line-height: 140%;
+      background: #d08c25;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-fill-color: transparent;
+
+      @media (max-width: 700px) {
+        font-size: 24px;
+        line-height: 140%;
+      }
+    }
+    h1.title {
+      font-family: "Changa";
+      font-style: normal;
+      font-weight: 600;
+      font-size: 52px;
+      line-height: 140%;
+      color: #fff;
+
+      @media (max-width: 700px) {
+        font-size: 48px;
+        line-height: 120%;
+      }
+    }
+    p.info {
+      font-family: "Changa";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 32px;
+      color: #fff;
+    }
+  }
+}
+
+footer {
+  width: 100%;
+  background-color: #000;
+  padding-block: 50px;
+  color: #fff;
+}
